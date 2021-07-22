@@ -43,7 +43,6 @@ export class NotifyComponent implements OnInit, OnDestroy {
     this.flagError = false;
     this.notifyService.dataPopup.subscribe((res: any) => {
       this.data = res;
-      console.log(this.data)
     });
   }
 
