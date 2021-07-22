@@ -16,8 +16,6 @@ import { NotifyService } from 'src/app/common/notify/notify.service';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('dropdownOrder', { static: false }) dropdownOrder!: ElementRef;
-  @ViewChild('dropdownOrderDesc', { static: false }) dropdownOrderDesc!: ElementRef;
-  @ViewChild('dropdownOrderAsc', { static: false }) dropdownOrderAsc!: ElementRef;
 
   constructor(
     private homeService: HomeService,
