@@ -1,3 +1,4 @@
+import { Message } from 'src/app/config/message/message';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
@@ -36,5 +37,12 @@ describe('HomeComponent', () => {
     expect(component.formatTimeBlog('')).toEqual('');
     expect(component.formatTimeBlog('2021-09-09 13:03:23')).toEqual('2021-09-09');
     expect(component.formatTimeBlog('2021/07/09 12:33:56')).toEqual('2021/07/09');
+  });
+
+  it('no data shoult be inner message', () => {
+    component.data = [];
+    fixture.detectChanges();
+    const el = fixture.nativeElement.querySelector('#v-no-data-display');
+    expect(el.textContent).toContain(Message.MSI00001);
   });
 });
