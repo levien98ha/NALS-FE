@@ -89,6 +89,11 @@ export class HomeComponent implements OnInit {
     this.defaultLayoutService.objectBlogSearch.page = event;
     this.objectSearchClone.page = event;
     this.getDataPage();
+    this.scrollToTop();
+  }
+
+  scrollToTop() {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }
 
   isOrderOpen = false;
