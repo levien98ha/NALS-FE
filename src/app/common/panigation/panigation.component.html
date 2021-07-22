@@ -1,0 +1,39 @@
+<nav
+    aria-label="pagination"
+    *ngIf="totalPage > 0"
+>
+    <ul class="pagination justify-content-center">
+        <li class="page-item {{currentPage === 1 ? 'disabled' : ''}}">
+            <span
+                class="page-link"
+                (click)="pageChange(currentPage - 1)"
+            >
+                Previous
+            </span>
+        </li>
+        <ng-container *ngFor="let item of [].constructor(totalPage); let i = index;">
+            <li class="page-item {{currentPage === (i + 1) ? 'active' : ''}}">
+                <span
+                    class="page-link"
+                    (click)="pageChange(i+1)"
+                >
+                    {{i+1}}
+                    <span
+                        *ngIf="currentPage === (i + 1)"
+                        class="sr-only"
+                    >
+                        (current)
+                    </span>
+                </span>
+            </li>
+        </ng-container>
+        <li class="page-item {{currentPage === totalPage ? 'disabled' : ''}}">
+            <span
+                class="page-link"
+                (click)="pageChange(currentPage + 1)"
+            >
+                Next
+            </span>
+        </li>
+    </ul>
+</nav>

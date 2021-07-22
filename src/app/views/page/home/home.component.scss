@@ -1,0 +1,49 @@
+@import '../../../../assets/css/variable.scss';
+
+.media {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  background-color: $white-color;
+  padding: 10px;
+  text-overflow: ellipsis;
+  border: 2px solid $border-color;
+}
+
+.media:hover {
+  transform: scale(1.02);
+  color: $primary-color;
+  border-color: $primary-color;
+  .v-title {
+    color: $primary-color;
+  }
+}
+
+.list-unstyled {
+  margin-bottom: 0px;
+}
+
+.v-img-size {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.media-body {
+  align-self: flex-start;
+}
+
+.v-blog-card-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pd-0 {
+  padding: 0px !important;
+}
+
+.dropdown-menu {
+  width: 100%;
+}

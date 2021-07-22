@@ -1,0 +1,10 @@
+@import '../../../../assets/css/variable.scss';
+
+.container {
+  // 100vh - header - footer
+  min-height: calc(100vh - 56px - 56px);
+  padding: 20px 20px;
+  border-top: 2px solid $white-color;
+  border-bottom: 2px solid $white-color;
+  background-color: $white-color;
+}

@@ -1,0 +1,30 @@
+<div
+    class="v-notify-container"
+    *ngIf="notifyService.isShow"
+>
+    <div class="v-notify-popup v-notify-popup-msg">
+        <div class="v-cont-title-warning">
+            <span
+                class="v-header-title"
+                [title]="data.header"
+            >
+                {{data.header}}
+            </span>
+        </div>
+        <div class="v-cont">
+            <p
+                class="v-text-content"
+                [innerHTML]="data.data"
+            ></p>
+        </div>
+        <div class="v-error-footer">
+            <button
+                tabindex="-1"
+                class="btn btn-primary btn-custom-width"
+                (click)="pressOK()"
+            >
+                OK
+            </button>
+        </div>
+    </div>
+</div>

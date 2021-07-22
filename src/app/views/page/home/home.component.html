@@ -1,0 +1,98 @@
+<div class="d-flex flex-row justify-content-between">
+    <div class="col pd-0">
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span
+                            class="input-group-text"
+                            id="basic-addon3"
+                        >
+                            Title
+                        </span>
+                    </div>
+                    <input
+                        [(ngModel)]="objectSearchClone.title"
+                        type="text"
+                        class="form-control"
+                        aria-describedby="basic-addon3"
+                    >
+                </div>
+            </div>
+            <div class="col">
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="searchBlog()"
+                >
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col pd-0">
+        <div class="d-flex flex-row justify-content-end">
+            <div class="btn-group">
+                <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    (click)="toogleOrderDropdown()"
+                >
+                    Order by Create at
+                </button>
+                <div
+                    class="dropdown-menu"
+                    #dropdownOrder
+                >
+                    <span
+                        #dropdownItemDesc
+                        class="dropdown-item"
+                        (click)="changeOrderby('desc')"
+                    >
+                        Newest
+                    </span>
+                    <span
+                        #dropdownItemAsc
+                        class="dropdown-item"
+                        (click)="changeOrderby('asc')"
+                    >
+                        Oldest
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="totalPage > 0 && data.length > 0">
+    <ul class="list-unstyled">
+        <ng-container *ngFor="let blog of data; let i = index;">
+            <li
+                class="media flex align-items-center"
+                (click)="blogDetail(blog.id)"
+            >
+                <img
+                    [src]="blog.image"
+                    class="mr-3 v-img-size"
+                    [alt]="blog.image"
+                >
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1 text-truncate v-title">{{blog.title}}</h5>
+                    <span class="v-content-blog-card-">{{blog.content}}</span>
+                    <br>
+                    {{formatTimeBlog(blog.createdAt)}}
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+    <app-panigation
+        [totalPage]="totalPage"
+        [currentPage]="defaultLayoutService.objectBlogSearch.page"
+        (pageChangeEmit)="pageChange($event)"
+    ></app-panigation>
+</ng-container>
+<ng-container *ngIf="totalPage == 0">
+  <div class="d-flex mt-2 justify-content-center align-items-center">
+    <h1>{{messInfo}}</h1>
+  </div>
+</ng-container>
