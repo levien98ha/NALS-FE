@@ -2,11 +2,9 @@ import { SpinnerService } from './../../../common/spinner.service';
 import { NotifyService } from './../../../common/notify/notify.service';
 import { Utilities } from './../../../common/utilities';
 import { BlogDetailsService } from './blog-details.service';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Constants } from 'src/app/common/constants/constants';
 import { Message } from 'src/app/config/message/message';
-import { DefaultLayoutService } from '../../theme/default-layout/default-layout.service';
 import { IBlog } from 'src/app/common/interface';
 
 @Component({
@@ -20,8 +18,7 @@ export class BlogDetailsComponent implements OnInit {
     private blogDetailService: BlogDetailsService,
     private util: Utilities,
     private notifyService: NotifyService,
-    private spinnerService: SpinnerService,
-    private defaultLayoutService: DefaultLayoutService
+    private spinnerService: SpinnerService
   ) { }
 
   idBlog: string = '';
