@@ -22,4 +22,10 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('footer should create inner copy right', () => {
+    fixture.detectChanges();
+    const el = fixture.nativeElement.querySelector('span');
+    expect(el.textContent).toContain('2021 NALS TEST - NGUYEN LE VIEN');
+  });
 });

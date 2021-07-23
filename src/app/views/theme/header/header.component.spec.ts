@@ -22,4 +22,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('header should create inner project name', () => {
+    fixture.detectChanges();
+    const el = fixture.nativeElement.querySelector('span');
+    expect(el.textContent).toContain('NALS Angular Developer');
+  });
 });

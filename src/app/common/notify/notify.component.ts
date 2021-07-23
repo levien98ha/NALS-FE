@@ -1,5 +1,5 @@
 import { NavigationStart, Router } from '@angular/router';
-import { Component, ElementRef, EventEmitter, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NotifyService } from './notify.service';
 
 @Component({
