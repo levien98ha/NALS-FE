@@ -83,6 +83,16 @@
             </li>
         </ng-container>
     </ul>
+    <div class="row">
+        <div class="col">
+            <h4>
+                Blogs:
+                <span class="badge text-light bg-primary">
+                    {{(objectSearchClone.page - 1) * 10 + 1}} to {{(objectSearchClone.page - 1) * 10  + 10 > totalBlog ? totalBlog : (objectSearchClone.page - 1) * 10  + 10}} of {{totalBlog}}
+                </span>
+            </h4>
+        </div>
+    </div>
     <app-panigation
         [totalPage]="totalPage"
         [currentPage]="defaultLayoutService.objectBlogSearch.page"
@@ -90,7 +100,10 @@
     ></app-panigation>
 </ng-container>
 <ng-container *ngIf="totalPage == 0">
-  <div id="v-no-data-display" class="d-flex mt-2 justify-content-center align-items-center">
-    <h1>{{messInfo}}</h1>
-  </div>
+    <div
+        id="v-no-data-display"
+        class="d-flex mt-2 justify-content-center align-items-center"
+    >
+        <h1>{{messInfo}}</h1>
+    </div>
 </ng-container>

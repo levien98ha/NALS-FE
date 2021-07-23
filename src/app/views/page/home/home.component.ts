@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   totalPage: number = 0;
+  totalBlog: number = 0;
   data: any = [];
   messInfo = '';
   ngOnInit(): void {
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.homeService.getTotalPage(this.defaultLayoutService.objectBlogSearch).subscribe((res) => {
       if (res) {
         this.totalPage = Math.ceil(res.length / this.defaultLayoutService.objectBlogSearch.limit);
+        this.totalBlog = res.length;
         if (this.totalPage === 0) {
           this.messInfo = Message.MSI00001;
         }
